@@ -1,0 +1,43 @@
+# Taps
+tap "mas-cli/tap"
+tap "homebrew/cask-versions"
+
+# Allow install apps from App Store
+brew "mas"
+
+# Apps from App Store
+# mas "Contrast", id: 1254981365
+mas "Keka", id: 470158793
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Remarkable desktop", id: 1276493162
+mas "Slack", id: 803453959
+mas "Telegram", id: 946399090
+mas "iA Writer", id: 775737590
+
+# Dev tools
+brew "ag"
+brew "autoconf"
+brew "automake"
+brew "bash"
+brew "coreutils"
+brew "ffmpeg"
+brew "gcc"
+brew "git"
+brew "gnupg"
+brew "jq"
+brew "libgccjit"
+brew "neovim"
+brew "openssl"
+brew "readline"
+brew "ripgrep"
+brew "texinfo"
+brew "wget"
+
+# GUI tools.
+cask "emacs-plus", args: { with_native_comp: true, with_imagemagick: true, with_mailutils: true, with_nobu417_big_sur_icon: true }
+cask "firefox"
+cask "gpg-suite"
+cask "rectangle"
+cask "spotify"

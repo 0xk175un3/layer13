@@ -1,0 +1,73 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "#cc6d00"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#e82424"
+index = 17
+
+[colors.bright]
+black = "#8a8980"
+blue = "#d7474b"
+cyan = "#6e915f"
+green = "#836f4a"
+magenta = "#6693bf"
+red = "#624c83"
+white = "#5e857a"
+yellow = "#43436c"
+
+[colors.normal]
+black = "#1f1f28"
+blue = "#c84053"
+cyan = "#6f894e"
+green = "#77713f"
+magenta = "#4d699b"
+red = "#b35b79"
+white = "#597b75"
+yellow = "#545464"
+
+[colors.primary]
+background = "#ffffff"
+foreground = "#545464"
+
+[colors.selection]
+background = "#c9cbd1"
+foreground = "#43436c"
+
+[colors.cursor]
+text = "#00BAFF"
+cursor = "#00BAFF"
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[cursor]
+thickness = 0.30
+[font]
+size = 17.0
+
+[font.bold]
+family = "PragmataPro Mono Liga"
+style = "Bold"
+
+[font.bold_italic]
+family = "PragmataPro Mono Liga"
+style = "Bold Italic"
+
+[font.italic]
+family = "PragmataPro Mono Liga"
+style = "Italic"
+
+[font.normal]
+family = "PragmataPro Mono Liga"
+style = "Regular"
+
+[window]
+decorations = "Full"
+padding = { x=16, y=16 }
+opacity = 0.999
+title = ""
