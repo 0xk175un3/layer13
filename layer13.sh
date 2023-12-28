@@ -14,38 +14,38 @@ hollow="artolevi"
 # Colorful logging
 
 function error() {
-  echo -e "\033[0;31m$*\033[0m"
+    echo -e "\033[0;31m$*\033[0m"
 }
 
 function intro() {
-  echo -e "\033[0;34m$*\033[0m"
+    echo -e "\033[0;34m$*\033[0m"
 }
 
 function log() {
-  echo -e "$*"
+    echo -e "$*"
 }
 
 function section() {
-  echo -e "\033[0;34m┅[■]┅ $*\033[0m"
+    echo -e "\033[0;34m┅[■]┅ $*\033[0m"
 }
 
 function a_theme() {
-  local text="═══[ $2 ]═══ ${*:3}"
-  local length="${#text}"
-  echo
-	echo '╔════════════════════════════════════════════════════════════════════════════╗'
-	echo -ne "╠\033[$1m$text\033[0m "
-  printf '═%.0s' $(seq 1 $((75 - length)))
-  echo '╣'
-	echo '╚════════════════════════════════════════════════════════════════════════════╝'
+    local text="═══[ $2 ]═══ ${*:3}"
+    local length="${#text}"
+    echo
+	  echo '╔════════════════════════════════════════════════════════════════════════════╗'
+	  echo -ne "╠\033[$1m$text\033[0m "
+    printf '═%.0s' $(seq 1 $((75 - length)))
+    echo '╣'
+	  echo '╚════════════════════════════════════════════════════════════════════════════╝'
 }
 
 function optional_theme() {
-  a_theme "1;32" "$1" "${*:2}"
+    a_theme "1;32" "$1" "${*:2}"
 }
 
 function inactive_theme() {
-  a_theme "1;37" "$1" "${*:2}"
+    a_theme "1;37" "$1" "${*:2}"
 }
 
 # Get the OS info
@@ -89,7 +89,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export PATH=$XDG_CONFIG_HOME/bin:$PATH
 export DEVELOPER=$HOME/Developer${USER:hollow}/personal
 
-env_https=""
+env_https="https://github.com/0xk175un3/layer13"
 
 if [ -d "$XDG_CONFIG_HOME" ] && [ ! -d "$XDG_CONFIG_HOME/.git" ]; then
     cd "$XDG_CONFIG_HOME" && {
@@ -251,10 +251,8 @@ macos_layer && {
 ## Linking Git
 macos_layer && {
     layer "system" "linking git settings" && {
-        cd "$XDG_CONFIG_HOME/git" && {
-            ln -sfv gitconfig $HOME/.gitconfig
-            ln -sfv gitconfig $HOME/.gitignore_global
-        }
+        ln -sfv $XDG_CONFIG_HOME/git/gitconfig $HOME/.gitconfig
+        ln -sfv $XDG_CONFIG_HOME/git/gitignore_global $HOME/.gitignore_global
     }
 }
 
@@ -272,10 +270,9 @@ macos_layer && {
     fi
   }
 }
-
-install_layer && {
+macos_layer && {
   layer "system" "install all libs & apps" && {
-    cd "$XDG_CONFIG_HOME/homebrew" && {
+    cd "$XDG_CONFIG_HOME/homebrew/" && {
         brew bundle
     }
   }
@@ -290,5 +287,11 @@ layer "system" "Fix gnupg" && {
   find ~/.gnupg -type d -exec chmod 700 {} \;
 }
 
+## Emacs
+macos_layer && {
+    layer "emacs" "Linking config" && {
+	ln -sfv $XDG_CONFIG_HOME/emacs/emacs.d $HOME/.emacs.d
+    }
+}
 
 true
