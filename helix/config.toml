@@ -1,0 +1,15 @@
+theme = "kanagawa"
+
+[editor]
+bufferline = "multiple"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
