@@ -28,8 +28,8 @@ parse_git_branch() {
 export PS1='⟁ \[\e[36m\][\w]\[$(parse_git_branch)\]\[\e[m\] ⨠  '
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(~/.rbenv/bin/rbenv init - bash)"
-. "$HOME/.cargo/env"
