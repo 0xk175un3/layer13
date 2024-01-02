@@ -1,0 +1,35 @@
+parse_git_branch() {
+    branch=$(git branch 2>/dev/null | grep '^*' | colrm 1 2)
+    if [ ! -z "$branch" ]; then
+        # Dark blue color for branch name
+        echo -ne " \033[0;34m${branch}\033[0m"
+
+        # Check if there are changes
+        if [ -n "$(git status --porcelain)" ]; then
+            # Check for staged changes
+            if git diff --cached --quiet; then
+                # Unstaged changes - red color
+                echo -e " [\033[0;31m■\033[0m]"
+            else
+                # Staged changes - yellow color
+
+                echo -e " [\033[0;33m■\033[0m]"
+            fi
+        else
+            # Clean working directory - green color
+            echo -e " [\033[0;32m■\033[0m]"
+
+        fi
+    else
+        echo -e ""
+    fi
+}
+
+export PS1='⟁ \[\e[36m\][\w]\[$(parse_git_branch)\]\[\e[m\] ⨠  '
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(~/.rbenv/bin/rbenv init - bash)"
+. "$HOME/.cargo/env"
