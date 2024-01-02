@@ -2,51 +2,45 @@
 draw_bold_text_with_bright_colors = true
 
 [[colors.indexed_colors]]
-color = "#cc6d00"
+color = "0xffa066"
 index = 16
 
 [[colors.indexed_colors]]
-color = "#e82424"
+color = "0xff5d62"
 index = 17
 
 [colors.bright]
-black = "#8a8980"
-blue = "#d7474b"
-cyan = "#6e915f"
-green = "#836f4a"
-magenta = "#6693bf"
-red = "#624c83"
-white = "#5e857a"
-yellow = "#43436c"
+black = "0x727169"
+blue = "0x7fb4ca"
+cyan = "0x7aa89f"
+green = "0x98bb6c"
+magenta = "0x938aa9"
+red = "0xe82424"
+white = "0xdcd7ba"
+yellow = "0xe6c384"
 
 [colors.normal]
-black = "#1f1f28"
-blue = "#c84053"
-cyan = "#6f894e"
-green = "#77713f"
-magenta = "#4d699b"
-red = "#b35b79"
-white = "#597b75"
-yellow = "#545464"
+black = "0x090618"
+blue = "0x7e9cd8"
+cyan = "0x6a9589"
+green = "0x76946a"
+magenta = "0x957fb8"
+red = "0xc34043"
+white = "0xc8c093"
+yellow = "0xc0a36e"
 
 [colors.primary]
-background = "#ffffff"
-foreground = "#545464"
+background = "0x1f1f28"
+foreground = "0xdcd7ba"
 
 [colors.selection]
-background = "#c9cbd1"
-foreground = "#43436c"
-
-[colors.cursor]
-text = "#00BAFF"
-cursor = "#00BAFF"
+background = "0x2d4f67"
+foreground = "0xc8c093"
 
 [cursor.style]
 blinking = "Always"
-shape = "Beam"
+shape = "Block"
 
-[cursor]
-thickness = 0.30
 [font]
 size = 17.0
 
