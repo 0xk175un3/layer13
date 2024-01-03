@@ -25,7 +25,11 @@ parse_git_branch() {
     fi
 }
 
-export PS1='⟁ \[\e[36m\][\w]\[$(parse_git_branch)\]\[\e[m\] ⨠  '
+if [ -e $HOME/.bash_aliases ]; then
+    source $HOME/.bash_aliases
+fi
+
+export PS1='𝜆 \[\e[36m\][\w]\[$(parse_git_branch)\]\[\e[m\] ⨠  '
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

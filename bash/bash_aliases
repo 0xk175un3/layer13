@@ -1,0 +1,4 @@
+alias mnt='mount | grep -E ^/dev | column -t'
+alias gh='history|grep'
+alias cg='cd `git rev-parse --show-toplevel`'
+alias be='bundle exec '
